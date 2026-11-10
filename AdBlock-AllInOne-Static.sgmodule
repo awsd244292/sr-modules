@@ -1,10 +1,14 @@
 #!name=去广告全家桶（静态合并版）
-#!desc=版本 v1.8（2026-11-10 并入 AWAvenue Only.Ads 补充 569 条纯域名拦截；此前 v1.7 并入优量汇素材CDN ugdtimg，酷安冷启日志实锤；v1.6 并入16:32大包HAR实锤七组 最右/彩云窗口广告域）｜墨鱼主模块2026-11-04快照（酷安首页indexV8已放行）+ 补充版v13 + QQ音乐专属 + AWAvenue补充，单文件全包；静态维护、不自动更新
+#!desc=版本 v1.9（2026-11-11 酷安HAR实证补洞：穿山甲素材整族 pglstatp-toutiao.com＋京东Kepler两域；v1.8 2026-11-10 并入 AWAvenue Only.Ads 补充 569 条纯域名拦截；此前 v1.7 并入优量汇素材CDN ugdtimg，酷安冷启日志实锤；v1.6 并入16:32大包HAR实锤七组 最右/彩云窗口广告域）｜墨鱼主模块2026-11-04快照（酷安首页indexV8已放行）+ 补充版v13 + QQ音乐专属 + AWAvenue补充，单文件全包；静态维护、不自动更新
 #!category=去广告
 # 合并来源：Moyu-Main-Static.sgmodule（Walvez订阅版快照，ku_an_16已摘indexV8）/ Yfamily补充版v13 / zqzess QMusicAd
 # 去重口径：规则与正文重写按整行去重、URL重写按正则keep-first（主模块优先）、脚本按(pattern,script-path)去重、MITM域名并集
 
 [Rule]
+# ===== v1.9 补洞（2026-11-11 酷安 HAR 实证：开屏图出自 p26-be-pack-sign.pglstatp-toutiao.com，v1.8 只枚举 p1-p6、整族靠 MITM 的 URL 规则兜底，MITM 失效即漏；京东 Kepler 配置/落地页 v1.8 零覆盖。三条均为域名级 REJECT，不依赖 MITM）=====
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN,dg.k.jd.com,REJECT
+DOMAIN,dgstatic.jd.com,REJECT
 # ===== 芒果TV（2026-11-05 补：广告投放/监测域名，来源 AdGuard中文视频规则/ACL4SSR/AWAvenue/Loon懒人合集）=====
 DOMAIN-SUFFIX,da.mgtv.com,REJECT
 DOMAIN-SUFFIX,da.hunantv.com,REJECT
